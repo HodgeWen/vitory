@@ -2,8 +2,7 @@
   "name": "victory",
   "version": "0.0.0",
   "scripts": {
-    "gen-entries": "node scripts/gen-entries.js",
-    "prepare": "husky install"
+    "gen-entries": "node scripts/gen-entries.js"
   },
   "devDependencies": {
     "husky": "^5.1.3",
