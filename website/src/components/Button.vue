@@ -1,26 +1,22 @@
 <template>
   <v-btn>按钮测试</v-btn>
-  <v-btn danger>按钮测试</v-btn>
-  <v-btn success>按钮测试</v-btn>
-  <v-btn primary>按钮测试</v-btn>
-  <v-btn info>按钮测试</v-btn>
-  <v-btn warning>按钮测试</v-btn>
+  <v-btn color="primary">按钮测试</v-btn>
+  <v-btn color="info">按钮测试</v-btn>
+  <v-btn color="success">按钮测试</v-btn>
+  <v-btn color="warning">按钮测试</v-btn>
+  <v-btn color="danger">按钮测试</v-btn>
 </template>
 
 <script lang="ts">
 import { ref, defineComponent } from 'vue'
 import { VBtn } from 'victory-ui'
+
 export default defineComponent({
   name: 'HelloWorld',
   components: {
     VBtn
   },
-  props: {
-    msg: {
-      type: String,
-      required: true
-    }
-  },
+
   setup: () => {
     const count = ref(0)
     return { count }

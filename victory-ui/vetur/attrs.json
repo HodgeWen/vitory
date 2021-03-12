@@ -1,0 +1,17 @@
+{
+  "color": {
+    "type": "string",
+    "description": "主色系",
+    "options": ["primary", "success", "info", "warning", "danger"]
+  },
+  "size": {
+    "type": "string",
+    "description": "大小",
+    "options": ["large", "medium", "small", "mini"]
+  },
+
+  "v-btn/type": {
+    "type": "string",
+    "description": "按钮类型"
+  }
+}

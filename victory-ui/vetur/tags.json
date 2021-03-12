@@ -2,7 +2,7 @@
   "v-btn": {
     "description": "按钮",
     "attributes": [
-      "primary", "success", "info", "warning", "danger"
+      "color", "type", "size"
     ]
   }
 }

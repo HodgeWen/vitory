@@ -5,23 +5,32 @@ const { sync } = require('glob')
 const { writeFileSync, readFileSync, existsSync } = require('fs')
 const { cwd } = require('process')
 
-let content = '// 执行gen-entry命令来生成此文件\n\n'
+// 组件入口文件内容
+let componentEntryContent = '// 执行gen-entry命令来生成此文件\n\n'
+// 样式入口文件内容
+let themeEntryContent = ''
+
 let reg = /\/([A-z\d]+)\/$/
 let exportReg = /export\s/
-sync('packages/victory-ui/components/*/').forEach(component => {
+sync('victory-ui/components/*/').forEach(component => {
   reg.test(component)
   const componentName = RegExp.$1
 
-  // 生成同样的样式文件
-  const stylePath = resolve(cwd(), `packages/victory-ui/styles/${componentName}.scss`)
-  if (!existsSync(stylePath)) {
-    writeFileSync(stylePath, '')
-  }
+  // 组件对应的样式文件路径
+  const themePath = resolve(cwd(), `victory-ui/styles/theme/${componentName}.scss`)
+
+  !existsSync(themePath) && writeFileSync(themePath, '')
+
+  themeEntryContent += `@import '${componentName}';\n\n`
 
   const entryContent = readFileSync(resolve(cwd(), component, 'index.ts')).toString()
   if (exportReg.test(entryContent)) {
     console.log('导出: ' + componentName + ' 组件')
-    content += `export * from './components/${componentName}'\n\n`
+    componentEntryContent += `export * from './components/${componentName}'\n\n`
   }
 })
-writeFileSync(resolve(__dirname, '../packages/victory-ui/index.ts'), content)
+
+// 主题文件入口生成
+writeFileSync(resolve(cwd(), `victory-ui/styles/theme/index.scss`), themeEntryContent)
+// 组件文件入口生成
+writeFileSync(resolve(__dirname, '../victory-ui/index.ts'), componentEntryContent)

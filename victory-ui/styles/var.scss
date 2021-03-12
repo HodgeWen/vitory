@@ -1,0 +1,26 @@
+:root {
+  // 主色
+  --primary: #1867c0;
+  --primary-dark: mix(#1867c0, #000, 10%);
+  --primary-light: mix(#1867c0, #fff, 10%);
+  // 信息色
+  --info: #00bcd4;
+  --info-dark: mix(#00bcd4, #000, 10%);
+  --info-light: mix(#00bcd4, #fff, 10%);
+  // 成功色
+  --success: #4caf50;
+  --success-dark: mix(#4caf50, #000, 10%);
+  --success-light: mix(#4caf50, #fff, 10%);
+  // 警告色
+  --warning: #fb8c00;
+  --warning-dark: mix(#fb8c00, #000, 10%);
+  --warning-light: mix(#fb8c00, #fff, 10%);
+  // 危险色
+  --danger: #ff5252;
+  --danger-dark: mix(#ff5252, #000, 10%);
+  --danger-light: mix(#ff5252, #fff, 10%);
+
+  // 主题色, 除了拥有自身辅助色的组件外的颜色
+  --theme-color: #333;
+  --theme-bg: #fff;
+}
