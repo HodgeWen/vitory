@@ -2,16 +2,12 @@
   "name": "victory",
   "version": "0.0.0",
   "scripts": {
-    "gen-entries": "node scripts/gen-entries.js"
+    "gen-entries": "node scripts/gen-entries.js",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "husky": "^5.1.3",
     "@commitlint/cli": "^12.0.1",
     "@commitlint/config-conventional": "^12.0.1"
-  },
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
-    }
   }
 }
