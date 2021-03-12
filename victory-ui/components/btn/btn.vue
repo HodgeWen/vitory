@@ -1,5 +1,5 @@
 <template>
-  <button class="v-btn" :class="dynamicClass">
+  <button class="v-btn" :class="dynamicClass" @click="$emit('click', $event)">
     <slot />
   </button>
 </template>
@@ -10,21 +10,29 @@ import { computed, defineComponent } from 'vue'
 export default defineComponent({
   name: 'VBtn',
 
-  emits: [''],
+  emits: {
+    click(e: MouseEvent) {}
+  },
 
   props: {
     color: String, // primary success info warning danger
     size: String, // large medium small mini
-    type: String //
+    round: Boolean,
+    circle: Boolean
   },
 
-  setup(props) {
+  methods: {
+    a() {
+
+    }
+  },
+
+  setup: (props) => {
     const dynamicClass = computed(() => {
       let classList: string[] = []
-      const { color, type, size } = props
+      const { color, size } = props
       color && classList.push(`--${color}`)
       size && classList.push(`--${size}`)
-      type && classList.push(`--${type}`)
 
       return classList
     })

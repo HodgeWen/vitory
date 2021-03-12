@@ -1,8 +1,8 @@
 <template>
   <v-btn>按钮测试</v-btn>
-  <v-btn color="primary">按钮测试</v-btn>
-  <v-btn color="info">按钮测试</v-btn>
-  <v-btn color="success">按钮测试</v-btn>
+  <v-btn color="primary" size="large" @click="onClick">按钮测试</v-btn>
+  <v-btn color="info" size="small" >按钮测试</v-btn>
+  <v-btn color="success" size="mini">按钮测试</v-btn>
   <v-btn color="warning">按钮测试</v-btn>
   <v-btn color="danger">按钮测试</v-btn>
 </template>
@@ -15,6 +15,13 @@ export default defineComponent({
   name: 'HelloWorld',
   components: {
     VBtn
+  },
+
+  methods: {
+    onClick(e: any) {
+
+      console.log(e)
+    }
   },
 
   setup: () => {

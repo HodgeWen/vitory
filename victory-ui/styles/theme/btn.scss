@@ -1,46 +1,24 @@
 .v-btn {
   height: 36px;
   padding: 0 16px;
-
   vertical-align: middle;
+  background-color: #fff;
+  border: 1px solid #999;
+  border-radius: var(--radius-medium);
 
-  &.--large {
-    height: 42px;
-    padding: 0 18px;
+  @each $size, $height, $pd in (large, 42px, 0 18px), (small, 30px, 0 14px), (mini, 24px, 0 12px) {
+    &.--#{$size} {
+      height: $height;
+      padding: $pd;
+      border-radius: var(--radius-#{$size});
+    }
   }
 
-  &.--small {
-    height: 30px;
-    padding: 0 14px;
-  }
-
-  &.--mini {
-    height: 24px;
-    padding: 0 12px;
-  }
-
-  &.--primary {
-    color: #fff;
-    background-color: var(--primary);
-  }
-
-  &.--info {
-    color: #fff;
-    background-color: var(--info);
-  }
-
-  &.--success {
-    color: #fff;
-    background-color: var(--success);
-  }
-
-  &.--warning {
-    color: #fff;
-    background-color: var(--warning);
-  }
-
-  &.--danger {
-    color: #fff;
-    background-color: var(--danger);
+  @each $type in primary, info, success, warning, danger {
+    &.--#{$type} {
+      color: #fff;
+      background-color: var(--#{$type});
+      border: 1px solid var(--#{$type}-dark);
+    }
   }
 }

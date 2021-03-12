@@ -1,26 +1,38 @@
+$primary: #1867c0;
+$info: #00bcd4;
+$success: #4caf50;
+$warning: #fb8c00;
+$danger: #ff5252;
+$weight: 10%; // 深浅色比重
+
 :root {
   // 主色
-  --primary: #1867c0;
-  --primary-dark: mix(#1867c0, #000, 10%);
-  --primary-light: mix(#1867c0, #fff, 10%);
+  --primary: #{$primary};
+  --primary-dark: #{mix(#000, $primary, $weight)};
+  --primary-light: #{mix(#fff, $primary, $weight)};
   // 信息色
-  --info: #00bcd4;
-  --info-dark: mix(#00bcd4, #000, 10%);
-  --info-light: mix(#00bcd4, #fff, 10%);
+  --info: #{$info};
+  --info-dark: #{mix(#000, $info, $weight)};
+  --info-light: #{mix(#fff, $info, $weight)};
   // 成功色
-  --success: #4caf50;
-  --success-dark: mix(#4caf50, #000, 10%);
-  --success-light: mix(#4caf50, #fff, 10%);
+  --success: #{$success};
+  --success-dark: #{mix(#000, $success, $weight)};
+  --success-light: #{mix(#fff, $success, $weight)};
   // 警告色
-  --warning: #fb8c00;
-  --warning-dark: mix(#fb8c00, #000, 10%);
-  --warning-light: mix(#fb8c00, #fff, 10%);
+  --warning: #{$warning};
+  --warning-dark: #{mix(#000, $warning, $weight)};
+  --warning-light: #{mix(#fff, $warning, $weight)};
   // 危险色
-  --danger: #ff5252;
-  --danger-dark: mix(#ff5252, #000, 10%);
-  --danger-light: mix(#ff5252, #fff, 10%);
+  --danger: #{$danger};
+  --danger-dark: #{mix(#000, $danger, $weight)};
+  --danger-light: #{mix(#fff, $danger, $weight)};
 
   // 主题色, 除了拥有自身辅助色的组件外的颜色
   --theme-color: #333;
   --theme-bg: #fff;
+
+  --radius-large: 4px;
+  --radius-medium: 3px;
+  --radius-small: 2px;
+  --radius-mini: 2px;
 }
