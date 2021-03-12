@@ -1,0 +1,9 @@
+{
+  "name": "victory-ui",
+  "version": "0.0.0",
+  "main": "./index.ts",
+  "devDependencies": {
+    "sass": "^1.32.8",
+    "vue": "^3.0.7"
+  }
+}

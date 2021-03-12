@@ -1,0 +1,7 @@
+{
+  "name": "victory",
+  "version": "0.0.0",
+  "scripts": {
+    "gen-entries": "node scripts/gen-entries.js"
+  }
+}
