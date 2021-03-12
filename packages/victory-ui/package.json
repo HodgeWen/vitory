@@ -5,5 +5,9 @@
   "devDependencies": {
     "sass": "^1.32.8",
     "vue": "^3.0.7"
+  },
+  "vetur": {
+    "tags": "./vetur/tags.json",
+    "attributes": "./vetur/attrs.json"
   }
 }

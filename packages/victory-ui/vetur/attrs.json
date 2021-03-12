@@ -1,0 +1,22 @@
+{
+  "primary": {
+    "type": "boolean",
+    "description": "主色系"
+  },
+  "success": {
+    "type": "boolean",
+    "description": "表示成功的颜色"
+  },
+  "info": {
+    "type": "boolean",
+    "description": "表示信息的颜色"
+  },
+  "warning": {
+    "type": "boolean",
+    "description": "表示警告的颜色"
+  },
+  "danger": {
+    "type": "boolean",
+    "description": "表示危险的颜色"
+  }
+}
