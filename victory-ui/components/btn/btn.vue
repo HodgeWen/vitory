@@ -1,14 +1,18 @@
 <template>
-  <button class="v-btn" :class="dynamicClass" @click="$emit('click', $event)">
+  <button v-ripple class="v-btn" :class="dynamicClass" @click="$emit('click', $event)">
     <slot />
   </button>
 </template>
 
 <script lang="ts">
 import { computed, defineComponent } from 'vue'
-
+import { Ripple } from '../../directives'
 export default defineComponent({
   name: 'VBtn',
+
+  directives: {
+    ripple: Ripple
+  },
 
   emits: {
     click(e: MouseEvent) {}
@@ -22,12 +26,10 @@ export default defineComponent({
   },
 
   methods: {
-    a() {
-
-    }
+    a() {}
   },
 
-  setup: (props) => {
+  setup: props => {
     const dynamicClass = computed(() => {
       let classList: string[] = []
       const { color, size } = props
